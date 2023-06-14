@@ -8,10 +8,12 @@ import DesignAndArtPage from "./pages/DesignAndArtPage";
 
 // Import other page components...
 
-// Define your context
+// Define your context and provide a default value for your reducer
 export const AppContext = createContext();
 
-// Define your reducer
+// Define your reducer function to handle actions and state changes
+// This is where you will update your state based on the action type
+// that is passed in from your dispatch function
 function appReducer(state, action) {
   switch (action.type) {
     case 'SET_PAGE':
@@ -26,8 +28,9 @@ function appReducer(state, action) {
   }
 }
 
+
 function App() {
-  // Initialize your reducer
+  // Initialize your reducer and state with the default value and function returned from useReducer
   const [state, dispatch] = useReducer(appReducer, {
     headline: '',
     sidebar: '',
@@ -35,6 +38,7 @@ function App() {
   });
 
   return (
+    // Wrap your app in the provider and pass the current state and dispatch function to the value prop of the provider object
     <AppContext.Provider value={{ state, dispatch }}>
       <Router>
         <Routes>
@@ -56,7 +60,7 @@ function App() {
 
                 {state.sidebar}
 
-                {/* // Other menu items... */}
+                {/*  Other menu items... */}
               </aside>
 
               <main className="w-2/3">
@@ -76,5 +80,8 @@ function App() {
     </AppContext.Provider>
   );
 }
+
+// Export your App component
+// This is what will be imported into index.js
 
 export default App;

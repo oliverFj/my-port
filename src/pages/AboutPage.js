@@ -3,21 +3,33 @@ import { Link } from 'react-router-dom';
 
 function AboutPage(props) {
   useEffect(() => {
-    props.dispatch({ 
-      type: 'SET_PAGE', 
+    props.dispatch({
+      type: 'SET_PAGE',
       payload: {
         headline: "About",
         sidebar: (
           <div className="flex flex-col space-y-0">
             <Link to="/blog" className="block hover:bg-gray-200">
               <div className="flex items-center h-12 text-center border-b-2 border-black text-black font-bold px-2 cursor-pointer">
-                Blog
+                Who I Am
               </div>
             </Link>
 
             <Link to="/design-and-art" className="block hover:bg-gray-200">
               <div className="flex items-center h-12 text-center border-b-2 border-black text-black font-bold px-2 cursor-pointer">
-                Design & Art
+                Prototyping/IoT/CAD
+              </div>
+            </Link>
+
+            <Link to="/design-and-art" className="block hover:bg-gray-200">
+              <div className="flex items-center h-12 text-center border-b-2 border-black text-black font-bold px-2 cursor-pointer">
+                Web Design/Concept development
+              </div>
+            </Link>
+
+            <Link to="/design-and-art" className="block hover:bg-gray-200">
+              <div className="flex items-center h-12 text-center border-b-2 border-black text-black font-bold px-2 cursor-pointer">
+                3D Modeling/Game development
               </div>
             </Link>
 
@@ -31,15 +43,18 @@ function AboutPage(props) {
           </div>
         ),
         main: (
-          <div className="space-y-4 text-center">
-            <h2 className="text-2xl font-bold p-2 ">About Me</h2>
-            <p className="text-lg p-2">I'm a writer, designer, developer, and artist. I love creating beautiful and functional designs, and I'm passionate about coding and digital art.</p>
-            
-            {/* Assuming you have an image named "AboutImage.jpg" in your public directory */}
-            <img src="/AboutImage.jpg" alt="A picture of me" className="w-1/2 mx-auto rounded-full" />
+          <div className="space-y-4 text-left">
+            <h2 className="text-2xl font-bold p-2 ">Who am I?</h2>
+            <p className="text-lg p-2">I'm like a person or something</p>
+
+            <p className="text-lg justify- p-2">
+              Who am I, you ask? Quite simply, I'm a connoisseur of life's most intricate mysteries, a tireless explorer of the human condition. Some might just say I'm "like a person or something". But let's face it, aren't we all a little more than "something"? 
+              <img src="/AndetBillede.jpg" alt="A picture of me" className="w-1/2 float-right m-3 border-2 border-black " />
+               Dive into the depths of my thoughts, explorations, and musings, and perhaps you'll find that you and I, we're not just "somethings", we're someones navigating this wild ride of existence. Welcome to my world.
+            </p>
           </div>
         ),
-      } 
+      }
     });
   }, []);
 
