@@ -17,7 +17,7 @@ function AboutPage(props) {
 
             <Link to="/design-and-art" className="block hover:bg-gray-200">
               <div className="flex items-center h-12 text-center border-b-2 border-black text-black font-bold px-2 cursor-pointer">
-                Prototyping/IoT/CAD
+                Prototyping/CAD
               </div>
             </Link>
 

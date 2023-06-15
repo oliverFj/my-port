@@ -28,6 +28,12 @@ function HomePage(props) {
               </div>
             </Link>
 
+            <Link to="/input" className="block hover:bg-gray-200">
+              <div className="flex items-center h-12 text-center border-b-2 border-black text-black font-bold px-2 cursor-pointer">
+                Input
+              </div>
+            </Link>
+
 
             {/* Add more tabs here */}
           </div>
