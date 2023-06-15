@@ -5,15 +5,14 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import BlogAndWritingsPage from "./pages/BlogAndWritingsPage";
 import DesignAndArtPage from "./pages/DesignAndArtPage";
+import FirebaseInput from "./pages/FirebaseInput";
+import BlogDetailPage from "./pages/BlogDetailPage";
 
-// Import other page components...
 
 // Define your context and provide a default value for your reducer
 export const AppContext = createContext();
 
-// Define your reducer function to handle actions and state changes
-// This is where you will update your state based on the action type
-// that is passed in from your dispatch function
+// Define your reducer function
 function appReducer(state, action) {
   switch (action.type) {
     case 'SET_PAGE':
@@ -46,6 +45,8 @@ function App() {
           <Route path="/about" element={<AboutPage dispatch={dispatch} />} />
           <Route path="/blog" element={<BlogAndWritingsPage dispatch={dispatch} />} />
           <Route path="/design" element={<DesignAndArtPage dispatch={dispatch} />} />
+          <Route path="/input" element={<FirebaseInput dispatch={dispatch} />} />
+          <Route path="/blog/:id" element={<BlogDetailPage />} />
           {/* // Other routes... */}
         </Routes>
 
